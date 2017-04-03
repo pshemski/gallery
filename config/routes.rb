@@ -1,29 +1,11 @@
 Rails.application.routes.draw do
-  get 'images/new'
+  
+  root 'images#index'
 
-  get 'images/create'
+  get 'upload' => 'images#new', as: 'upload'
 
-  get 'images/index'
-
-  get 'images/show'
-
-  get 'images/edit'
-
-  get 'images/update'
-
-  get 'images/destroy'
-
-  get 'categories/new'
-
-  get 'categories/create'
-
-  get 'categories/show'
-
-  get 'categories/edit'
-
-  get 'categories/update'
-
-  get 'categories/destroy'
+  resources :images
+  resources :categories
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
